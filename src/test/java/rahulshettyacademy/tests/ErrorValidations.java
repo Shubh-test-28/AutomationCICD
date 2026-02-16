@@ -21,4 +21,17 @@ public class ErrorValidations extends BaseTest {
         Assert.assertEquals("Incorrect email or password.",landingPage.getErrorMessage());
 
     }
+    @Test
+    public void ProductErrorValidation() throws IOException, InterruptedException
+    {
+
+        String productName = "ZARA COAT 3";
+        ProductCatalogue productCatalogue = landingPage.loginApplication("Shubh28@gmail.com","Iamking@009");
+        List<WebElement> products = productCatalogue.getProductList();
+        productCatalogue.addProductToCart(productName);
+        CartPage cartPage = productCatalogue.goToCartPage();
+        Boolean match = cartPage.VerifyProductDisplay("ZARA COAT 33");
+        Assert.assertFalse(match);
+
+    }
 }

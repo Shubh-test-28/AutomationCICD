@@ -22,7 +22,7 @@ public class ErrorValidations extends BaseTest {
     @Test(groups = {"ErrorHandling"})
     public void ProductErrorValidation()  throws IOException, InterruptedException
     {
-        // new comments
+        // updated Comment
         String productName = "ZARA COAT 3";
         ProductCatalogue productCatalogue = landingPage.loginApplication("Shubh28@gmail.com","Iamking@000");
         List<WebElement> products = productCatalogue.getProductList();
